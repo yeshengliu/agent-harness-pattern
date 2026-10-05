@@ -74,7 +74,13 @@ patterns/                   one file per pattern, vendor-neutral
 skills/                     packaged as Agent Skills for any compatible client
 reference/                  minimal implementation to copy
 diagrams/                   source-rendered diagrams
+bench/                      the empirical tests behind the claims above
 ```
+
+`bench/` is not a library. It is the sandbox that produced the numbers cited in
+[02-self-evolving-loop.md](docs/02-self-evolving-loop.md) and
+[03-tradeoffs.md](docs/03-tradeoffs.md), kept in the repository so a reader can
+re-run it or check the raw output in `bench/results/`.
 
 ## When not to use this
 
@@ -91,9 +97,9 @@ work that must survive process death, and human attention as the bottleneck.
 Extracted from one operator's working harness. The patterns are described as
 invariants so they can be checked, not as a framework to install.
 
-**Some invariants have been tested; others have not.** A separate sandbox
-(`harness-bench`) exercises these claims under fault injection and records what
-held. Rather than repeat its numbers here, where they would drift out of sync:
+**Some invariants have been tested; others have not.** [`bench/`](bench/) exercises
+these claims under fault injection and records what held. Rather than repeat its
+numbers here, where they would drift out of sync:
 
 | Claim | Status there |
 | --- | --- |
